@@ -23,7 +23,7 @@ public class Runner {
         wait = new WebDriverWait(driver, 15);
         driver.get("https://opensource-demo.orangehrmlive.com/");
         loginPage = new LoginPage(driver, wait);
-        loginPage.doLogin("Admin","admin123").welcomeHome();
+        loginPage.doLogin("Admin","admin123").getUserName ().logoutUser ();
 
     }
 }
