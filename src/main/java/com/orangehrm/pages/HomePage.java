@@ -19,6 +19,25 @@ public class HomePage {
 
     private static final By NAME_LOCATOR = By.id ( "welcome" );
     private static final By LOGOUT_LOCATOR = By.xpath ( "//a[normalize-space()='Logout']" );
+   // private static final By MAINMENU_LOCATOR = By.xpath ( "//b[text()='Admin']" );
+
+    private String mainMenu="//b[text()='%value%']";
+    private String subMainMenu ="//a[text()='%value%']";
+    private String subMenu = "//a[text()='%value%']";
+
+    public HomePage clickOnMainMenu(String value){
+        homePageWait.until ( ExpectedConditions.elementToBeClickable ( By.xpath ( mainMenu.replace ( "%value%",value) ) ) ).click ();
+        return this;
+    }
+
+    public HomePage clickOnSubMainMenu(String value){
+        homePageWait.until ( ExpectedConditions.elementToBeClickable ( By.xpath ( subMainMenu.replace ( "%value%",value) ) ) ).click ();
+        return this;
+    }
+    public HomePage clickOnSubMenu(String value){
+        homePageWait.until ( ExpectedConditions.elementToBeClickable ( By.xpath ( subMenu.replace ( "%value%",value) ) ) ).click ();
+        return this;
+    }
 
     public HomePage getUserName(){
         WebElement userName = homePageWait.until ( ExpectedConditions.elementToBeClickable ( NAME_LOCATOR ) );
@@ -30,4 +49,11 @@ public class HomePage {
         homePageWait.until ( ExpectedConditions.elementToBeClickable ( LOGOUT_LOCATOR ) ).click ();
         return new LoginPage ( homePageDriver,homePageWait );
     }
+
+//    public HomePage clickOnMainMenu(){
+//        homePageWait.until ( ExpectedConditions.presenceOfElementLocated ( MAINMENU_LOCATOR ) ).click ();
+//        return new HomePage ( homePageDriver,homePageWait );
+//    }
+
+
 }

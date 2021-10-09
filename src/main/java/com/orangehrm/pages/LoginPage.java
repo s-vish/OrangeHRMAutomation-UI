@@ -14,18 +14,15 @@ public class LoginPage {
     }
 
     private static final By USERNAMELOCATOR = By.id("txtUsername");
-    private static final  By USERPASSWORDLOCATOR = By.id("txtPassword");
+    private static final By USERPASSWORDLOCATOR = By.id("txtPassword");
     private static final By LOGINBUTTONLOCATOR = By.id("btnLogin");
-
     private WebDriver loginPageDriver;
     private WebDriverWait loginPageWait;
 
-
-
     public HomePage doLogin(String uname, String pass)
     {
-       WebElement userField =  loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAMELOCATOR));
-       userField.sendKeys(uname);
+
+        loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAMELOCATOR)).sendKeys ( uname );
 
         WebElement passField =  loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USERPASSWORDLOCATOR));
         passField.sendKeys(pass);
