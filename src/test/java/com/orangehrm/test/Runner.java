@@ -38,12 +38,19 @@ public class Runner {
     }
 
     @Test(priority = 2)
+    public void userManagementFlow(){
+        loginPage.doLogin("Admin","admin123").clickOnMainMenu ("Admin").
+                clickOnSubMainMenu ( "User Management" )
+                .clickOnSubMenu ( "Users" );
+    }
+
+    @Test(priority = 3)
     public void requestForgotPassword()
     {
         loginPage.RestPassword().doResetPassword();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void cancelForgotPassword()
     {
         loginPage.RestPassword().cancelResetPassword();

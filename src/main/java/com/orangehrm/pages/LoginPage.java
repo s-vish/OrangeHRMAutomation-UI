@@ -18,29 +18,21 @@ public class LoginPage {
     private static final By LOGIN_BUTTON_LOCATOR = By.id("btnLogin");
     private static final By FORGOT_PASSWORD_LOCATOR = By.linkText("Forgot your password?");
 
+
     private WebDriver loginPageDriver;
     private WebDriverWait loginPageWait;
 
-
-
     public HomePage doLogin(String uname, String pass)
     {
-       WebElement userField =  loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_LOCATOR));
-       userField.sendKeys(uname);
-
-        WebElement passField =  loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USER_PASSWORD_LOCATOR));
-        passField.sendKeys(pass);
-
-        WebElement loginButton =  loginPageWait.until(ExpectedConditions.elementToBeClickable(LOGIN_BUTTON_LOCATOR));
-        loginButton.click();
-
+        loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_LOCATOR)).sendKeys(uname);
+        loginPageWait.until(ExpectedConditions.visibilityOfElementLocated(USER_PASSWORD_LOCATOR)).sendKeys(pass);
+        loginPageWait.until(ExpectedConditions.elementToBeClickable(LOGIN_BUTTON_LOCATOR)).click ();
         return new HomePage(loginPageDriver, loginPageWait);
     }
 
     public ForgotPasswordPage RestPassword()
     {
-        WebElement forgotPasswordTextField = loginPageWait.until(ExpectedConditions.elementToBeClickable(FORGOT_PASSWORD_LOCATOR));
-        forgotPasswordTextField.click();
+        loginPageWait.until(ExpectedConditions.elementToBeClickable(FORGOT_PASSWORD_LOCATOR)).click ();
         return new ForgotPasswordPage(loginPageDriver,loginPageWait);
     }
 }
