@@ -32,7 +32,9 @@ public class ForgotPasswordPage {
     {
         WebElement cancelButton = forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(CANCEL_BUTTON_LOCATOR));
         cancelButton.click();
+        System.out.println ("cancel button is working" );
         return new LoginPage(forgotPasswordPageDriver, forgotPasswordWait);
+
     }
 
 
