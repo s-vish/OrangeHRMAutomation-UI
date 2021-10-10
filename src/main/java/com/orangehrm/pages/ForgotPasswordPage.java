@@ -20,21 +20,16 @@ public class ForgotPasswordPage {
     private static final By RESET_PASSWORD_BUTTON_LOCATOR = By.id("btnSearchValues");
     private static final By CANCEL_BUTTON_LOCATOR = By.id("btnCancel");
 
-    public void doResetPassword()
-    {
-        WebElement userNameTextBox = forgotPasswordWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_TEXTBOX_LOCATOR));
-        userNameTextBox.sendKeys("Admin");
-        WebElement restButton = forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(RESET_PASSWORD_BUTTON_LOCATOR));
-        restButton.click();
+    public void doResetPassword(String userName) {
+        forgotPasswordWait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_TEXTBOX_LOCATOR)).sendKeys(userName);
+        forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(RESET_PASSWORD_BUTTON_LOCATOR)).click();
+
     }
 
-    public LoginPage cancelResetPassword()
-    {
-        WebElement cancelButton = forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(CANCEL_BUTTON_LOCATOR));
-        cancelButton.click();
-        System.out.println ("cancel button is working" );
+    public LoginPage cancelResetPassword() {
+       forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(CANCEL_BUTTON_LOCATOR)).click ();
+        forgotPasswordWait.until(ExpectedConditions.elementToBeClickable(CANCEL_BUTTON_LOCATOR)).click();
         return new LoginPage(forgotPasswordPageDriver, forgotPasswordWait);
-
     }
 
 
