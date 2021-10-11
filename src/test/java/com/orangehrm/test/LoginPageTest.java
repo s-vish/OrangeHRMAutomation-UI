@@ -19,7 +19,10 @@ public class LoginPageTest extends BaseTest {
     public void userManagementFlow(){
         loginPage.doLogin(username,pass).clickOnMainMenu ("Admin").
                 clickOnSubMainMenu ( "User Management" )
-                .clickOnSubMenu ( "Users" );
+                .clickOnSubMenu ( "Users" )
+                .clickAddButton ()
+                .addUserDetails ();
+
     }
 
     @Test(priority = 3, description ="Reset password flow")
@@ -33,4 +36,5 @@ public class LoginPageTest extends BaseTest {
     {
         loginPage.RestPassword().cancelResetPassword();
     }
+
 }

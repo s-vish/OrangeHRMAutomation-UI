@@ -34,9 +34,9 @@ public class HomePage {
         homePageWait.until ( ExpectedConditions.elementToBeClickable ( By.xpath ( subMainMenu.replace ( "%value%",value) ) ) ).click ();
         return this;
     }
-    public HomePage clickOnSubMenu(String value){
+    public AdminPage clickOnSubMenu(String value){
         homePageWait.until ( ExpectedConditions.elementToBeClickable ( By.xpath ( subMenu.replace ( "%value%",value) ) ) ).click ();
-        return this;
+        return new AdminPage(homePageDriver,homePageWait);
     }
 
     public HomePage getUserName(){
