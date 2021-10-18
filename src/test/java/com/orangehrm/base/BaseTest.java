@@ -15,6 +15,9 @@ public class BaseTest {
     public WebDriverWait wait;
     public LoginPage loginPage;
 
+    public static String username = FileReaderClass.propertiesReader("userName");
+    public static String pass = FileReaderClass.propertiesReader("password");
+
     @BeforeMethod
     public void setUp()
     {
