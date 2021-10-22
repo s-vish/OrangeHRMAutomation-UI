@@ -23,7 +23,7 @@ public class BaseTest {
     {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Long.parseLong(FileReaderClass.propertiesReader("wait")));
+        wait = new WebDriverWait(driver, Integer.parseInt(FileReaderClass.propertiesReader("wait")));
         driver.get(FileReaderClass.propertiesReader("URL"));
         loginPage = new LoginPage(driver, wait);
     }
