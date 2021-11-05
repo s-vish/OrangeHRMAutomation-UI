@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="API Request Scenarios" verbose="1" >
+    <test name="ORANGE HRM AUTOMATION" >
+        <classes>
+           <class name="com.orangehrm.test.LoginPageTest"></class>
+            <class name="com.orangehrm.test.UserManagmentPageTest"></class>
+        </classes>
+    </test>
+
+
+</suite>

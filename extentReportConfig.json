@@ -1,0 +1,12 @@
+{
+  "theme": "STANDARD",
+  "encoding": "utf-8",
+  "protocol": "HTTPS",
+  "timelineEnabled": false,
+  "offlineMode": true,
+  "documentTitle": "ORANGE HRM AUTOMATION REPORTS",
+  "reportName": "ORANGE HRM SUITE",
+  "timeStampFormat": "MMM dd, yyyy HH:mm:ss a",
+  "js": "",
+  "css": ""
+}

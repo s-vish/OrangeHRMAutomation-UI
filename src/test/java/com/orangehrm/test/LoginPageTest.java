@@ -4,21 +4,22 @@ import com.orangehrm.base.BaseTest;
 import com.orangehrm.utilities.FileReaderClass;
 import org.testng.annotations.*;
 
+@Listeners(com.orangehrm.reports.ReportsListners.class)
 public class LoginPageTest extends BaseTest {
 
 
-    @Test(priority = 1, description = "Login and Logout test")
+    @Test(priority = 1, description = "Verify Login and Logout test")
     public void LoginTest() {
        loginPage.doLogin(username,pass).getUserName ().logoutUser ();
     }
 
-    @Test(priority = 3, description ="Reset password flow")
+    @Test(priority = 3, description ="Verify Reset password flow")
     public void requestForgotPassword()
     {
         loginPage.RestPassword().doResetPassword(username);
     }
 
-    @Test(priority = 4, description = "cancel reset password flow")
+    @Test(priority = 4, description = " Verify cancel reset password flow")
     public void cancelForgotPassword()
     {
         loginPage.RestPassword().cancelResetPassword();
