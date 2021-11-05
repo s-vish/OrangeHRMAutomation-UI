@@ -13,13 +13,13 @@ public class LoginPageTest extends BaseTest {
        loginPage.doLogin(username,pass).getUserName ().logoutUser ();
     }
 
-    @Test(priority = 3, description ="Verify Reset password flow")
+    @Test(priority = 2, description ="Verify Reset password flow")
     public void requestForgotPassword()
     {
         loginPage.RestPassword().doResetPassword(username);
     }
 
-    @Test(priority = 4, description = " Verify cancel reset password flow")
+    @Test(priority = 3, description = " Verify cancel reset password flow")
     public void cancelForgotPassword()
     {
         loginPage.RestPassword().cancelResetPassword();
